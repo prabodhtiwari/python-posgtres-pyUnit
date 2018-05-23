@@ -6,12 +6,14 @@ Requirments:
     `Python 2.7`
     `Postgres`
 
-Environment Variables
-    ``` DB
-        HOST
-        PASSWORD
-        USER
-        PORT```
+Environment Variables:
+    ```
+    DB
+    HOST
+    PASSWORD
+    USER
+    PORT
+    ```
 
 To install dependencies:
     `pip install -r requirements.txt`
