@@ -28,7 +28,7 @@ class MyTestCase(unittest.TestCase):
         second = second_test()
         self.assertEqual(first, [(1, 'one', 'Test Store One',
                                   'A', 'USD'), (2, 'two', 'Test Store Two', 'A', None)])
-        self.assertEqual(second, [(1, datetime.date(2018, 1, 1), 2018, 1, 1, 1), (2, datetime.date(2018, 1, 2), 2018, 1, 2, 2), (3, datetime.date(2018, 1, 3), 2018, 1, 3, 3), (4, datetime.date(
+        self.assertEqual(second, [(2, datetime.date(2018, 1, 1), 2018, 1, 1, 1), (2, datetime.date(2018, 1, 2), 2018, 1, 2, 2), (3, datetime.date(2018, 1, 3), 2018, 1, 3, 3), (4, datetime.date(
             2018, 1, 4), 2018, 1, 4, 4), (5, datetime.date(2018, 1, 5), 2018, 1, 5, 5), (6, datetime.date(2018, 1, 6), 2018, 1, 6, 6), (7, datetime.date(2018, 1, 7), 2018, 1, 7, 7)])
 
 
