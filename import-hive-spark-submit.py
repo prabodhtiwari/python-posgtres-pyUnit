@@ -12,13 +12,10 @@ def first_test():
     result = cursor.fetchall()
     return result
 
-print json.dumps(first_test())
-
-
 class MyTestCase(unittest.TestCase):
     def test_hive_first_setup(self):
         first = first_test()
-        self.assertEqual(json.dumps(first), '')
+        self.assertEqual(json.dumps(first), '[[1, "one", "Test Store One", "A", "USD"], [2, "two", "Test Store Two", "A", null]]')
 
 
 if __name__ == '__main__':
