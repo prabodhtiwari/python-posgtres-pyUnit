@@ -7,18 +7,25 @@ cursor = conn.cursor()
 
 def first_test():
     cursor.execute("show databases")
-    print cursor.description
-    for result in cursor.fetchall():
-        print(json.dumps(result))
+    result = cursor.fetchall()
     return result
 
 
 def second_test():
     cursor.execute("use dev_gglcloud_edh")
     cursor.execute("show tables")
-    print cursor.description
     result = cursor.fetchall()
     return result
+
+def third_test():
+    cursor.execute("use dev_gglcloud_edh")
+    cursor.execute("describe dim_store")
+    result = cursor.fetchall()
+    return result
+
+print third_test()
+print json.dumps(third_test())
+print json.loads(json.dumps(third_test()))
 
 class MyTestCase(unittest.TestCase):
     def test_hive_first_setup(self):
