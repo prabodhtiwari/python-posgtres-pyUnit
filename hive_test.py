@@ -1,5 +1,5 @@
 from pyhive import hive
-# import unittest
+import unittest
 import json
 
 conn = hive.Connection(host="0.0.0.0", port=10000, username="")
@@ -9,17 +9,15 @@ def first_test():
     cursor.execute("show databases")
     print cursor.description
     for result in cursor.fetchall():
-        print(json.dumps(result[0]))
+        print(json.dumps(result))
     return result
 
 print json.dumps(first_test())
 
-# class MyTestCase(unittest.TestCase):
-#     def test_hive_first_setup(self):
-#         first = first_test()
-#         self.assertEqual(first, (u'default',)
-# (u'dev_gglcloud_edh',))
+class MyTestCase(unittest.TestCase):
+    def test_hive_first_setup(self):
+        first = first_test()
+        self.assertEqual(json.dumps(first), ["dev_gglcloud_edh"])
 
-
-# if __name__ == '__main__':
-#     unittest.main()
+    if __name__ == '__main__':
+        unittest.main()
