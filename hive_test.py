@@ -9,7 +9,8 @@ def first_test():
     cursor.execute("show databases")
     print cursor.description
     result = cursor.fetchall()
-    print(json.dumps(result))
+    print(json.dumps(result[0]))
+    print(json.dumps(result[1]))
 
 # print first_test()
 
