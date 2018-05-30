@@ -26,7 +26,7 @@ def third_test():
 class MyTestCase(unittest.TestCase):
     def test_hive_first_setup(self):
         first = first_test()
-        self.assertEqual(json.dumps(first), '["dev_gglcloud_edh"]')
+        self.assertEqual(json.dumps(first), '[["default"], ["dev_gglcloud_edh"]]')
 
     def test_hive_second_setup(self):
         second = second_test()
