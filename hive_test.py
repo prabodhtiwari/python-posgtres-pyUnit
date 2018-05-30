@@ -8,11 +8,9 @@ cursor = conn.cursor()
 
 
 def t():
-    return subprocess.call(["hdfs", "dfs", "-ls"])
+    return subprocess.call(["hdfs", "dfs", "-ls", "/user/hadoop/hive/dev/gglcloud/edh/"])
 
 print t()
-print json.dumps(t())
-print json.loads(t())
 
 def first_test():
     cursor.execute("show databases")
