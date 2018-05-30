@@ -5,8 +5,6 @@ import unittest
 def first_test():
     return subprocess.check_output(["cat", "/home/hadoop/output.csv"])
 
-print first_test()
-
 class MyTestCase(unittest.TestCase):
     def test_pig_first_setup(self):
         first = first_test()
