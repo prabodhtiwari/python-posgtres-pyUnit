@@ -10,7 +10,7 @@ print first_test()
 class MyTestCase(unittest.TestCase):
     def test_pig_first_setup(self):
         first = first_test()
-        self.assertEqual(json.dumps(first), '')
+        self.assertEqual(json.dumps(first), '"one,Test Store One,A,USD\\ntwo,Test Store Two,A,\\n"')
 
 if __name__ == '__main__':
     unittest.main()
