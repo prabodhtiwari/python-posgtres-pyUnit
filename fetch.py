@@ -4,11 +4,11 @@ def test():
     conn = db_client.connect()
     cur = conn.cursor()
 
-    cur.execute("SELECT id FROM users")
+    cur.execute("select * from dim_store")
     rows = cur.fetchall()
     res = ""
     for row in rows:
-        res = row[0]
+        res = row
 
     conn.close()
     return res
