@@ -1,16 +1,16 @@
 from pyhive import hive
 # import unittest
-# import json
+import json
 
 conn = hive.Connection(host="0.0.0.0", port=10000, username="")
 cursor = conn.cursor()
 
-# def first_test():
-cursor.execute("show databases")
-print cursor.description
-for result in cursor.fetchall():
-# print(json.dumps(result))
- print result
+def first_test():
+    cursor.execute("show databases")
+    print cursor.description
+    result = cursor.fetchall()
+    print(json.dumps(result))
+    print result
 
 # print first_test()
 
