@@ -6,8 +6,6 @@ import os
 def first_test():
     return subprocess.check_output(["hive", "-S", "-f", os.environ["EDHDIST"]+"/scripts/hql/dim_store_extract.sql"])
 
-print first_test()
-
 class MyTestCase(unittest.TestCase):
     def test_pig_first_setup(self):
         first = first_test()
