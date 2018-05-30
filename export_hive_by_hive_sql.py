@@ -4,7 +4,7 @@ import unittest
 import os
 
 def first_test():
-    return subprocess.check_output(["hive", "-S", "-f", os.environ["EDHDIST"]+"/scripts/hql/dim_store_extract.sql"], env = d)
+    return subprocess.check_output(["hive", "-S", "-f", os.environ["EDHDIST"]+"/scripts/hql/dim_store_extract.sql"])
 
 print first_test()
 
