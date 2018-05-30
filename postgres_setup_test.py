@@ -1,24 +1,26 @@
+import os
+import psycopg2
 import unittest
-import db_client
 import datetime
 
+def connect():
+    return psycopg2.connect(database=os.environ["DB"], user=os.environ["USER"], password=os.environ["PASSWORD"], host=os.environ["HOST"], port=os.environ["PORT"])
+
+conn = connect()
+cur = conn.cursor()
+
+
 def first_test():
-    conn = db_client.connect()
-    cur = conn.cursor()
 
     cur.execute("select * from dim_store")
     rows = cur.fetchall()
-    conn.close()
     return rows
 
 
 def second_test():
-    conn = db_client.connect()
-    cur = conn.cursor()
 
     cur.execute("select * from dim_time_date")
     rows = cur.fetchall()
-    conn.close()
     return rows
 
 
@@ -36,3 +38,6 @@ class MyTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+conn.close()
