@@ -23,10 +23,6 @@ def third_test():
     result = cursor.fetchall()
     return result
 
-print third_test()
-print json.dumps(third_test())
-print json.loads(json.dumps(third_test()))
-
 class MyTestCase(unittest.TestCase):
     def test_hive_first_setup(self):
         first = first_test()
@@ -35,6 +31,10 @@ class MyTestCase(unittest.TestCase):
     def test_hive_second_setup(self):
         second = second_test()
         self.assertEqual(json.dumps(second), '[["bad_consumer_experiment_discovery_visitor"], ["dim_store"], ["dim_time_date"], ["fct_consumer_experiment_discovery_visitor"], ["fct_discovery_visitor_store_day_experiment"], ["raw_consumer_experiment_discovery_visitor"]]')
+
+    def test_hive_third_setup(self):
+        third = third_test()
+        self.assertEqual(json.dumps(third), '[["storeid", "int", "store Integer Id"], ["tla", "string", "Three Letter Acronym for the store"], ["name", "string", "Store name"], ["status", "string", "Status of the store- whether it is A-active, I-inactive or X-deleted"], ["salescurrencycode", "string", ""]]')
 
 if __name__ == '__main__':
     unittest.main()
