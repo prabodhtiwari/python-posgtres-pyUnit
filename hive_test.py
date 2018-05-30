@@ -23,11 +23,11 @@ def second_test():
 class MyTestCase(unittest.TestCase):
     def test_hive_first_setup(self):
         first = first_test()
-        self.assertEqual(json.dumps(first), ["dev_gglcloud_edh"])
+        self.assertEqual(json.dumps(first), '["dev_gglcloud_edh"]')
 
     def test_hive_second_setup(self):
         second = second_test()
-        self.assertEqual(json.dumps(second), [["bad_consumer_experiment_discovery_visitor"], ["dim_store"], ["dim_time_date"], ["fct_consumer_experiment_discovery_visitor"], ["fct_discovery_visitor_store_day_experiment"], ["raw_consumer_experiment_discovery_visitor"]])
+        self.assertEqual(json.dumps(second), '[["bad_consumer_experiment_discovery_visitor"], ["dim_store"], ["dim_time_date"], ["fct_consumer_experiment_discovery_visitor"], ["fct_discovery_visitor_store_day_experiment"], ["raw_consumer_experiment_discovery_visitor"]]')
 
 if __name__ == '__main__':
     unittest.main()
