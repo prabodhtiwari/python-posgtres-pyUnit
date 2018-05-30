@@ -2,7 +2,7 @@ from pyhive import hive
 import unittest
 import json
 
-conn = hive.Connection(host="0.0.0.0", port=10000, username="hive")
+conn = hive.Connection(host="0.0.0.0", port=10002, username="hive")
 cursor = conn.cursor()
 
 def first_test():
