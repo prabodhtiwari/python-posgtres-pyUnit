@@ -43,5 +43,17 @@ class MyTestCase(unittest.TestCase):
         third = third_test()
         self.assertEqual(json.dumps(third), '[["storeid", "int", "store Integer Id"], ["tla", "string", "Three Letter Acronym for the store"], ["name", "string", "Store name"], ["status", "string", "Status of the store- whether it is A-active, I-inactive or X-deleted"], ["salescurrencycode", "string", ""]]')
 
+    def test_hive_forth_setup(self):
+        forth = t()
+        self.assertEqual(json.dumps(forth), 'Found 6 items' +
+                                                'drwxr-xr-x   - hadoop hadoop       4096 2018-05-28 18:42 /user/hadoop/hive/dev/gglcloud/edh/bad_consumer_experiment_discovery_visitor' +
+                                                'drwxrwxr-x   - hadoop hadoop       4096 2018-05-30 14:14 /user/hadoop/hive/dev/gglcloud/edh/dim_store'+
+                                                'drwxr-xr-x   - hadoop hadoop       4096 2018-05-28 18:41 /user/hadoop/hive/dev/gglcloud/edh/dim_time_date'+
+                                                'drwxr-xr-x   - hadoop hadoop       4096 2018-05-28 18:43 /user/hadoop/hive/dev/gglcloud/edh/fct_consumer_experiment_discovery_visitor'+
+                                                'drwxr-xr-x   - hadoop hadoop       4096 2018-05-28 18:43 /user/hadoop/hive/dev/gglcloud/edh/fct_discovery_visitor_store_day_experiment'+
+                                                'drwxr-xr-x   - hadoop hadoop       4096 2018-05-30 14:16 /user/hadoop/hive/dev/gglcloud/edh/raw_consumer_experiment_discovery_visitor'+
+        '0')
+
+
 if __name__ == '__main__':
     unittest.main()
