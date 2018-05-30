@@ -14,6 +14,7 @@ def first_test():
 
 
 def second_test():
+    cursor.execute("use dev_gglcloud_edh")
     cursor.execute("show tables")
     print cursor.description
     result = cursor.fetchall()
