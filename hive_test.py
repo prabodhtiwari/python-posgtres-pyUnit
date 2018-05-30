@@ -10,8 +10,7 @@ def first_test():
     print cursor.description
     for result in cursor.fetchall():
         print(json.dumps(result[0]))
-        print(json.dumps(result[1]))
-        return result
+    return result
 
 print first_test()
 
