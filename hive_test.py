@@ -20,7 +20,7 @@ def second_test():
     result = cursor.fetchall()
     return result
 
-print second_test()
+print json.loads(second_test())
 
 
 class MyTestCase(unittest.TestCase):
