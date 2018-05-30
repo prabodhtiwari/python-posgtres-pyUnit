@@ -1,9 +1,11 @@
 import subprocess
 import json
 import unittest
+import os
 
 def first_test():
-    return subprocess.check_output(["hive", "-S", "-f", "$EDHDIST/scripts/hql/dim_store_extract.sql"])
+    d = dict(os.environ)
+    return subprocess.check_output(["hive", "-S", "-f", "$EDHDIST/scripts/hql/dim_store_extract.sql"], env = d)
 
 print first_test()
 
