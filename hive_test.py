@@ -12,7 +12,7 @@ def first_test():
         print(json.dumps(result[0]))
     return result
 
-print first_test()
+print json.dumps(first_test())
 
 # class MyTestCase(unittest.TestCase):
 #     def test_hive_first_setup(self):
