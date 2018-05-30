@@ -8,8 +8,9 @@ cursor = conn.cursor()
 
 
 def t():
-    return subprocess.call(["hdfs", "dfs", "-ls", "/user/hadoop/hive/dev/gglcloud/edh/"])
+    return subprocess.check_output(["hdfs", "dfs", "-ls", "/user/hadoop/hive/dev/gglcloud/edh/"])
 
+print "jere"
 print t()
 
 def first_test():
