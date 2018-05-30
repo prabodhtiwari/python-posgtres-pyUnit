@@ -5,8 +5,9 @@ import os
 
 def first_test():
     d = dict(os.environ)
-    print d
-    return subprocess.check_output(["hive", "-S", "-f", "$EDHDIST/scripts/hql/dim_store_extract.sql"], env = d)
+    print os.environ["EDHDIST"]
+    print d["EDHDIST"]
+    return subprocess.check_output(["hive", "-S", "-f", os.environ["EDHDIST"]+"/scripts/hql/dim_store_extract.sql"], env = d)
 
 print first_test()
 
