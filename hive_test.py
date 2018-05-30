@@ -16,8 +16,7 @@ def first_test():
 def second_test():
     cursor.execute("show tables")
     print cursor.description
-    for result in cursor.fetchall():
-        print(json.loads(result))
+    result = cursor.fetchall()
     return result
 
 print second_test()
