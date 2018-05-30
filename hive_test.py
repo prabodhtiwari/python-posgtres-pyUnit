@@ -12,7 +12,16 @@ def first_test():
         print(json.dumps(result))
     return result
 
-print json.dumps(first_test())
+
+def second_test():
+    cursor.execute("show tables")
+    print cursor.description
+    for result in cursor.fetchall():
+        print(json.loads(result))
+    return result
+
+print second_test()
+
 
 class MyTestCase(unittest.TestCase):
     def test_hive_first_setup(self):
