@@ -8,10 +8,10 @@ cursor = conn.cursor()
 def first_test():
     cursor.execute("show databases")
     for result in cursor.fetchall():
-        print(json.dumps(result))
+        # print(json.dumps(result))
         return result
 
-first_test()
+print first_test()
 
 # class MyTestCase(unittest.TestCase):
 #     def test_hive_first_setup(self):
