@@ -8,7 +8,7 @@ def test():
     rows = cur.fetchall()
     res = ""
     for row in rows:
-        res = row
+        res = rows
 
     conn.close()
     return res
