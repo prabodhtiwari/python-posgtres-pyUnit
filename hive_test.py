@@ -10,7 +10,6 @@ def first_test():
     print cursor.description
     result = cursor.fetchall()
     print(json.dumps(result))
-    print result
 
 # print first_test()
 
