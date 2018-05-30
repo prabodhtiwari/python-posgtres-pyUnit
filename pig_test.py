@@ -7,7 +7,8 @@ def first_test():
 
 print first_test()
 
-def test_pig_first_setup(self):
+class MyTestCase(unittest.TestCase):
+    def test_pig_first_setup(self):
         first = first_test()
         self.assertEqual(json.dumps(first), '')
 
