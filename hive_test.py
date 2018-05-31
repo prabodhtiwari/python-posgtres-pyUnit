@@ -38,15 +38,15 @@ class MyTestCase(unittest.TestCase):
 
     def test_hive_second_setup(self):
         second = second_test()
-        self.assertEqual(json.dumps(second), '[["default"], ["dev_gglcloud_edh"]]')
+        self.assertEqual(json.dumps(second), '"default\\ndev_gglcloud_edh\\n"')
 
     def test_hive_third_setup(self):
         third = third_test()
-        self.assertEqual(json.dumps(third), '[["bad_consumer_experiment_discovery_visitor"], ["dim_store"], ["dim_time_date"], ["fct_consumer_experiment_discovery_visitor"], ["fct_discovery_visitor_store_day_experiment"], ["raw_consumer_experiment_discovery_visitor"]]')
+        self.assertEqual(json.dumps(third), '"bad_consumer_experiment_discovery_visitor\\ndim_store\\ndim_time_date\\nfct_consumer_experiment_discovery_visitor\\nfct_discovery_visitor_store_day_experiment\\nraw_consumer_experiment_discovery_visitor\\n"')
 
     def test_hive_forth_setup(self):
         forth = forth_test()
-        self.assertEqual(json.dumps(forth), '[["storeid", "int", "store Integer Id"], ["tla", "string", "Three Letter Acronym for the store"], ["name", "string", "Store name"], ["status", "string", "Status of the store- whether it is A-active, I-inactive or X-deleted"], ["salescurrencycode", "string", ""]]')
+        self.assertEqual(json.dumps(forth), '"storeid             \\tint                 \\tstore Integer Id    \\ntla                 \\tstring              \\tThree Letter Acronym for the store\\nname                \\tstring              \\tStore name          \\nstatus              \\tstring              \\tStatus of the store- whether it is A-active, I-inactive or X-deleted\\nsalescurrencycode   \\tstring              \\t                    \\n"')
 
 
 if __name__ == '__main__':
