@@ -3,14 +3,15 @@ import unittest
 import json
 import subprocess
 
-conn = hive.Connection(host="0.0.0.0", port=10000, username="")
-cursor = conn.cursor()
+# conn = hive.Connection(host="0.0.0.0", port=10000, username="")
+# cursor = conn.cursor()
 
 
 def first_test():
-    cursor.execute("select * from dev_gglcloud_edh.dim_store")
-    result = cursor.fetchall()
-    return result
+    # cursor.execute("select * from dev_gglcloud_edh.dim_store")
+    # result = cursor.fetchall()
+    # return result
+    return subprocess.check_output(["hive","--database", "dev_gglcloud_edh", "-S", "-e", "select * from dim_store"])
 
 class MyTestCase(unittest.TestCase):
     def test_hive_first_setup(self):
