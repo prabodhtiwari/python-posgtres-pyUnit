@@ -3,8 +3,8 @@ import unittest
 import json
 import subprocess
 
-conn = hive.Connection(host="0.0.0.0", port=10000, username="")
-cursor = conn.cursor()
+# conn = hive.Connection(host="0.0.0.0", port=10000, username="")
+# cursor = conn.cursor()
 
 
 def first_test():
