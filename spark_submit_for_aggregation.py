@@ -8,30 +8,16 @@ cursor = conn.cursor()
 
 
 def first_test():
-    cursor.execute("use dev_gglcloud_edh")
-    cursor.execute("select * from raw_consumer_experiment_discovery_visitor")
-    result = cursor.fetchall()
-    return result
-
+    return subprocess.check_output(["hive","--database", "dev_gglcloud_edh", "-S", "-e", "select * from raw_consumer_experiment_discovery_visitor"])
 
 def second_test():
-    cursor.execute("use dev_gglcloud_edh")
-    cursor.execute("select * from bad_consumer_experiment_discovery_visitor")
-    result = cursor.fetchall()
-    return result
-
+    return subprocess.check_output(["hive","--database", "dev_gglcloud_edh", "-S", "-e", "select * from bad_consumer_experiment_discovery_visitor"])
 
 def third_test():
-    cursor.execute("use dev_gglcloud_edh")
-    cursor.execute("select * from fct_discovery_visitor_store_day_experiment")
-    result = cursor.fetchall()
-    return result
+    return subprocess.check_output(["hive","--database", "dev_gglcloud_edh", "-S", "-e", "select * from fct_discovery_visitor_store_day_experiment"])
 
 def forth_test():
-    cursor.execute("use dev_gglcloud_edh")
-    cursor.execute("select * from fct_consumer_experiment_discovery_visitor")
-    result = cursor.fetchall()
-    return result
+    return subprocess.check_output(["hive","--database", "dev_gglcloud_edh", "-S", "-e", "select * from fct_consumer_experiment_discovery_visitor"])
 
 class MyTestCase(unittest.TestCase):
     def test_hive_first_setup(self):
