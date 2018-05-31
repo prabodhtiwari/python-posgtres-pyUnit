@@ -1,17 +1,29 @@
-echo "USE CASE: Postgres database setup"
+echo "==========================================================================="
+echo "===== USE CASE: Postgres database setup                               ====="
+echo "==========================================================================="
 python postgres_setup_test.py
 
-echo "USE CASE: Hive database setup"
+echo "==========================================================================="
+echo "===== USE CASE: Hive database setup                                   ====="
+echo "==========================================================================="
 python hive_test.py
 
-echo "USE CASE: Test Pig script produces CSV"
+echo "==========================================================================="
+echo "===== USE CASE: Test Pig script produces CSV                          ====="
+echo "==========================================================================="
 python pig_test.py
 
-echo "USE CASE: Import data from CSVs into Hive via spark-submit"
+echo "==========================================================================="
+echo "===== USE CASE: Import data from CSVs into Hive via spark-submit      ====="
+echo "==========================================================================="
 python import_hive_spark_submit.py
 
-echo "USE CASE: Export data from Hive via Hive SQL file"
+echo "==========================================================================="
+echo "===== USE CASE: Export data from Hive via Hive SQL file               ====="
+echo "==========================================================================="
 python export_hive_by_hive_sql.py
 
-echo "USE CASE: Test spark-submit for the aggregations"
+echo "==========================================================================="
+echo "===== USE CASE: Test spark-submit for the aggregations                ====="
+echo "==========================================================================="
 python spark_submit_for_aggregation.py
