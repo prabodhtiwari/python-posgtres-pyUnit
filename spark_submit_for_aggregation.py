@@ -1,11 +1,6 @@
-from pyhive import hive
 import unittest
 import json
 import subprocess
-
-conn = hive.Connection(host="0.0.0.0", port=10000, username="")
-cursor = conn.cursor()
-
 
 def first_test():
     return subprocess.check_output(["hive","--database", "dev_gglcloud_edh", "-S", "-e", "select * from raw_consumer_experiment_discovery_visitor"])
