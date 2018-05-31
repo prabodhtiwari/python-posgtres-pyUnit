@@ -11,22 +11,25 @@ def first_test():
     return subprocess.check_output(["hdfs", "dfs", "-ls", "/user/hadoop/hive/dev/gglcloud/edh/"])
 
 def second_test():
-    cursor.execute("show databases")
-    result = cursor.fetchall()
-    return result
+    # cursor.execute("show databases")
+    # result = cursor.fetchall()
+    # return result
+    return subprocess.check_output(["hdfs", "-S", "e", "show databases"])
 
 
 def third_test():
-    cursor.execute("use dev_gglcloud_edh")
-    cursor.execute("show tables")
-    result = cursor.fetchall()
-    return result
+    # cursor.execute("use dev_gglcloud_edh")
+    # cursor.execute("show tables")
+    # result = cursor.fetchall()
+    # return result
+    return subprocess.check_output(["hdfs","--database", "dev_gglcloud_edh", "-S", "e", "show tables"])
 
 def forth_test():
-    cursor.execute("use dev_gglcloud_edh")
-    cursor.execute("describe dim_store")
-    result = cursor.fetchall()
-    return result
+    # cursor.execute("use dev_gglcloud_edh")
+    # cursor.execute("describe dim_store")
+    # result = cursor.fetchall()
+    # return result
+    return subprocess.check_output(["hdfs","--database", "dev_gglcloud_edh", "-S", "e", "describe dim_store"])
 
 class MyTestCase(unittest.TestCase):
     def test_hive_first_setup(self):
