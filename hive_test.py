@@ -1,34 +1,18 @@
-from pyhive import hive
 import unittest
 import json
 import subprocess
-
-# conn = hive.Connection(host="0.0.0.0", port=10000, username="")
-# cursor = conn.cursor()
-
 
 def first_test():
     return subprocess.check_output(["hdfs", "dfs", "-ls", "/user/hadoop/hive/dev/gglcloud/edh/"])
 
 def second_test():
-    # cursor.execute("show databases")
-    # result = cursor.fetchall()
-    # return result
     return subprocess.check_output(["hive", "-S", "-e", "show databases"])
 
 
 def third_test():
-    # cursor.execute("use dev_gglcloud_edh")
-    # cursor.execute("show tables")
-    # result = cursor.fetchall()
-    # return result
     return subprocess.check_output(["hive","--database", "dev_gglcloud_edh", "-S", "-e", "show tables"])
 
 def forth_test():
-    # cursor.execute("use dev_gglcloud_edh")
-    # cursor.execute("describe dim_store")
-    # result = cursor.fetchall()
-    # return result
     return subprocess.check_output(["hive","--database", "dev_gglcloud_edh", "-S", "-e", "describe dim_store"])
 
 class MyTestCase(unittest.TestCase):
