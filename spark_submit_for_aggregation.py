@@ -19,17 +19,17 @@ class MyTestCase(unittest.TestCase):
         first = first_test()
         self.assertEqual(json.dumps(first), '""')
 
-    def test_hive_second_setup(self):
-        second = second_test()
-        self.assertEqual(json.dumps(second), '""')
+    # def test_hive_second_setup(self):
+    #     second = second_test()
+    #     self.assertEqual(json.dumps(second), '""')
 
-    def test_hive_third_setup(self):
-        third = third_test()
-        self.assertEqual(json.dumps(third), '""')
+    # def test_hive_third_setup(self):
+    #     third = third_test()
+    #     self.assertEqual(json.dumps(third), '""')
 
-    def test_hive_forth_setup(self):
-        forth = forth_test()
-        self.assertEqual(json.dumps(forth), '""')
+    # def test_hive_forth_setup(self):
+    #     forth = forth_test()
+    #     self.assertEqual(json.dumps(forth), '""')
 
 
 if __name__ == '__main__':
